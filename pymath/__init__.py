@@ -14,8 +14,8 @@ class Function:
         if not isinstance(other, type(self)):
             raise NotFunctionOpertiaonException()
 
-        def new_function(x):
-            return self.function(x) + other.function(x)
+        def new_function(*args, **kwargs):
+            return self.function(*args, **kwargs) + other.function(*args, **kwargs)
 
         return Function(new_function)
 
@@ -23,7 +23,7 @@ class Function:
         if not isinstance(other, type(self)):
             raise NotFunctionOpertiaonException()
 
-        def new_function(x):
-            return self.function(other.function(x))
+        def new_function(*args, **kwargs):
+            return self.function(other.function(*args, **kwargs))
 
         return Function(new_function)
