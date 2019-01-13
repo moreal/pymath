@@ -1,7 +1,10 @@
+import pytest
+
 import init_path
 
 from pymath import Function
 from pymath import decorators
+from pymath import NotFunctionOpertiaonException
 
 
 def test_function_decorator():
@@ -21,6 +24,7 @@ def test_function_call():
 
     assert 1 == some_function()
 
+
 def test_function_add():
     @decorators.func
     def a():
@@ -34,6 +38,7 @@ def test_function_add():
 
     assert 3 == new_function()
 
+
 def test_function_mul():
     @decorators.func
     def a(x):
@@ -46,3 +51,16 @@ def test_function_mul():
     new_function = a*b
 
     assert 4 == new_function(1)
+
+
+def test_function_checking():
+    @decorators.func
+    def a(x):
+        return x + 1
+
+    with pytest.raises(NotFunctionOpertiaonException):
+        a + 1
+
+    with pytest.raises(NotFunctionOpertiaonException):
+        a * 1
+
