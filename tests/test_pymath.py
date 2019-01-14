@@ -4,7 +4,7 @@ import init_path
 
 from pymath import Function
 from pymath import decorators
-from pymath.exceptions import NotFunctionOpertiaonException
+from pymath.exceptions import NotFunctionOperationException
 
 
 def test_function_decorator():
@@ -58,9 +58,9 @@ def test_function_checking():
     def a(x):
         return x + 1
 
-    with pytest.raises(NotFunctionOpertiaonException):
+    with pytest.raises(NotFunctionOperationException):
         a + 1
 
-    with pytest.raises(NotFunctionOpertiaonException):
+    with pytest.raises(NotFunctionOperationException):
         a * 1
 
