@@ -4,7 +4,7 @@ import init_path
 
 from pymath import Function
 from pymath import decorators
-from pymath import NotFunctionOpertiaonException
+from pymath.exceptions import NotFunctionOpertiaonException
 
 
 def test_function_decorator():
