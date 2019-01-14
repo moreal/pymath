@@ -1,5 +1,4 @@
-class NotFunctionOpertiaonException(Exception):
-    pass
+from pymath.exceptions import NotFunctionOperationException
 
 
 class Function:
@@ -12,7 +11,7 @@ class Function:
 
     def __add__(self, other):
         if not isinstance(other, type(self)):
-            raise NotFunctionOpertiaonException()
+            raise NotFunctionOperationException()
 
         def new_function(*args, **kwargs):
             return self.function(*args, **kwargs) + other.function(*args, **kwargs)
@@ -21,7 +20,7 @@ class Function:
 
     def __mul__(self, other):
         if not isinstance(other, type(self)):
-            raise NotFunctionOpertiaonException()
+            raise NotFunctionOperationException()
 
         def new_function(*args, **kwargs):
             return self.function(other.function(*args, **kwargs))

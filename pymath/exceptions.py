@@ -1,0 +1,2 @@
+class NotFunctionOperationException(Exception):
+    pass
